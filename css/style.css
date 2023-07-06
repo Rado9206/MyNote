@@ -7,7 +7,7 @@
 body {
   height: 100vh;
   font-family: "Montserrat", sans-serif;
-  background-image: rgb(243, 243, 243);
+  background-color: rgb(243, 243, 243);
 }
 
 .menu {
@@ -18,9 +18,10 @@ body {
   height: 120px;
 }
 
-.menu button,
-.note-panel .save,
-.note-panel .cancel {
+.menu button .cancel,
+.menu button .save,
+.note-panel .cancel,
+.note-panel .save {
   padding: 12px 25px;
   background: none;
   border: 1px solid #999;
@@ -30,7 +31,8 @@ body {
   transition: backgroun-color 0.3s, color, 0.3s;
 }
 
-.menu button:hover,
+.menu button:hover .save:hover,
+.menu button:hover .cancel:hover,
 .note-panel .save:hover,
 .note-panel .cancel:hover {
   background-color: #333;
@@ -38,7 +40,7 @@ body {
 }
 
 .icon {
-  margin-right: 10px;
+  margin: 5px;
 }
 
 .add {
@@ -57,4 +59,60 @@ body {
   width: 240px;
   background-color: yellowgreen;
   border: 1px solid black;
+}
+.note .note-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.09);
+}
+.note .note-header .delete-note {
+  background: none;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+}
+.note .note-body {
+  font-size: 14px;
+  padding: 15px 20px;
+}
+
+.note-panel {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 40px 0;
+  width: 600px;
+  background-color: #fff;
+  box-shadow: 0 0 10px black;
+  border-radius: 5px;
+}
+.note-panel h2 {
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+.note-panel label {
+  margin-bottom: 10px;
+}
+.note-panel #text,
+.note-panel #category {
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  width: 100%;
+  max-width: 90%;
+  max-height: 600px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+.note-panel .error {
+  margin-bottom: 20px;
+  color: tomato;
+  visibility: hidden;
 }/*# sourceMappingURL=style.css.map */
