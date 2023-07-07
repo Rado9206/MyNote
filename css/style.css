@@ -18,8 +18,10 @@ body {
   height: 120px;
 }
 
-.menu button .cancel,
-.menu button .save,
+.menu button,
+.menu .cancel,
+.menu .save,
+.note-panel button,
 .note-panel .cancel,
 .note-panel .save {
   padding: 12px 25px;
