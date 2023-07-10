@@ -43,8 +43,8 @@ const createNote = () => {
     <button class="delete-note">
         <i class="fas fa-times icon"></i>
     </button>
-
     </div>
+
     <div class="note-body">
         ${textArea.value}
     </div>
@@ -54,13 +54,29 @@ const createNote = () => {
 	cardId++
 	textArea.value = ''
 	category.selectedIndex = 0
-    notePanel.style.display = 'none'
+	notePanel.style.display = 'none'
+	checkColor(newNote)
 }
 
 const selectValue = () => {
 	selectedValue = category.options[category.selectedIndex].text
 }
-selectValue()
+
+const checkColor = note => {
+	switch (selectedValue) {
+		case 'Zakupy':
+			note.style.backgroudColor = 'rgb(72,255,0)'
+			break
+
+		case 'Praca':
+			note.style.backgroudColor = 'rgb(255,243,0)'
+			break
+
+		case 'Inne':
+			note.style.backgroudColor = 'rgb(0,170,255)'
+			break
+	}
+}
 
 addBtn.addEventListener('click', openPanel)
 cancelBtn.addEventListener('click', closePanel)

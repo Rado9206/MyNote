@@ -1,1 +1,1 @@
-In this project we can add and remove notes.
+In this project we can create, add and remove notes.
