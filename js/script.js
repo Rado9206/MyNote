@@ -65,16 +65,16 @@ const selectValue = () => {
 const checkColor = note => {
 	switch (selectedValue) {
 		case 'Zakupy':
-			note.style.backgroudColor = 'rgb(72,255,0)'
-			break
+			note.style.backgrondColor = 'rgb(72, 255, 0)'
+			break;
 
 		case 'Praca':
-			note.style.backgroudColor = 'rgb(255,243,0)'
-			break
+			note.style.backgroundColor = 'rgb(255, 243, 0)'
+			break;
 
 		case 'Inne':
-			note.style.backgroudColor = 'rgb(0,170,255)'
-			break
+			note.style.backgroundColor = 'rgb(0, 170, 255)'
+			break;
 	}
 }
 
