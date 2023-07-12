@@ -2,7 +2,7 @@ const addBtn = document.querySelector('.add')
 const saveBtn = document.querySelector('.save')
 const cancelBtn = document.querySelector('.cancel')
 const deleteBtns = document.getElementsByClassName('delete-note')
-const deleteAllBtn = document.getElementsByClassName('.delete-all')
+const deleteAllBtn = document.querySelector('.delete-all')
 
 const noteArea = document.querySelector('.note-area')
 const notePanel = document.querySelector('.note-panel')
@@ -40,7 +40,7 @@ const createNote = () => {
 	newNote.innerHTML = `
     <div class="note-header">
     <h3 class="note-tittle">${selectedValue}</h3>
-    <button class="delete-note">
+    <button class="delete-note" onclick="deleteNote(${cardId})">
         <i class="fas fa-times icon"></i>
     </button>
     </div>
@@ -78,6 +78,16 @@ const checkColor = note => {
 	}
 }
 
+const deleteNote = id => {
+	const noteToDelete = document.getElementById(id)
+	noteArea.removeChild(noteToDelete)
+}
+
+const deleteAllNotes = () => {
+	noteArea.textContent = ''
+}
+
 addBtn.addEventListener('click', openPanel)
 cancelBtn.addEventListener('click', closePanel)
 saveBtn.addEventListener('click', addNote)
+deleteAllBtn.addEventListener('click', deleteAllNotes)
